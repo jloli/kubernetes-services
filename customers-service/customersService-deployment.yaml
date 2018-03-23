@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: customers-service
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      run: customers-service
+  template:
+    metadata:
+      labels:
+        run: customers-service
+    spec:
+      containers:
+      - name: customers-service
+        image: customers-service:1.0
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8001
