@@ -4,6 +4,9 @@ FROM openjdk:8-jdk-alpine
 #Expone el puerto donde va a atender el contenedor
 EXPOSE 8000
 
+ENV CUSTOMERS_SERVICE_URL 'http://localhost:8001'
+ENV ORDERS_SERVICE_URL 'http://localhost:8002'
+
 #Establece una variable para el momento de construir la imagen (la ruta del jar)
 ARG JAR_FILE
 

@@ -1,5 +1,0 @@
-services:
-  customers:
-    url: "http://192.168.64.3:30753/customersService/api/v1"
-  orders:
-    url: "http://192.168.64.3:31657/ordersService/api/v1"

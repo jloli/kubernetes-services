@@ -20,7 +20,6 @@ public class CustomerServiceImpl implements CustomerService {
     this.repository = repository;
   }
 
-
   @Override
   public Optional<Customer> getCustomer(Integer id) {
     return repository.findById(id);

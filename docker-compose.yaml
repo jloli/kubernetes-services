@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  summaryService:
+    image: jloli/summary-service:v0.0.1
+    depends_on:
+      - customersService
+      - ordersService
+    ports:
+      - "8080:8080"
+    environment:
+      CUSTOMERS_SERVICE_URL: http://customersService:8080
+      ORDERS_SERVICE_URL: http://ordersService:8080
+
+  customersService:
+    image: jloli/customers-service:v0.0.1
+    ports:
+      - "8001:8080"
+    environment:
+      HELLO_MESSAGE: 'Message from docker-compose'
+
+  ordersService:
+    image: jloli/orders-service:v0.0.1
+    ports:
+      - "8002:8080"

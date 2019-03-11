@@ -8,5 +8,4 @@ public interface CustomerOrderRepository extends CrudRepository<CustomerOrder, L
 
   List<CustomerOrder> findAllByCustomerId(Integer customerId);
 
-
 }

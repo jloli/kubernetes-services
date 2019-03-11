@@ -20,7 +20,6 @@ public class OrderServiceImpl implements OrderService {
     this.repository = repository;
   }
 
-
   @Override
   public List<CustomerOrder> findCustomerOrders(Integer customerId) {
     return repository.findAllByCustomerId(customerId);

@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: summary-service
+  jpa:
+    show-sql: true
+  h2:
+    console:
+      enabled: true
+
+server:
+  port: 8080
+
+management:
+  endpoints:
+    web.exposure.include: '*'
+
+services:
+  customers:
+    #url: "http://192.168.64.3:30753/customersService/api/v1"
+    url: ${CUSTOMERS_SERVICE_URL}
+  orders:
+    #url: "http://192.168.64.3:31657/ordersService/api/v1"
+    url: ${ORDERS_SERVICE_URL}
