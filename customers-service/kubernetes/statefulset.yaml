@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: customers-service-sts
+  labels:
+    app: customers-service-sts
+spec:
+  selector:
+    matchLabels:
+      app: customers-service-sts
+  serviceName: "customers-service-headless"
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: customers-service-sts
+    spec:
+      terminationGracePeriodSeconds: 10
+      containers:
+        - name: customers-service-sts
+          image: jloli/customers-service:v0.0.1
+          ports:
+            - containerPort: 8080
+              protocol: TCP
