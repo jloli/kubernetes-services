@@ -9,12 +9,20 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloController {
 
   @Value("${service.hello-message}")
-  private String message;
+  private String helloMessage;
+
+  @Value("${service.bye-message}")
+  private String byeMessage;
 
 
   @RequestMapping("/hello")
   public String sayHello() {
-    return StringUtils.defaultString(message, "Hello!");
+    return StringUtils.defaultString(helloMessage, "Hello!");
+  }
+
+  @RequestMapping("/bye")
+  public String sayGoodbye() {
+    return StringUtils.defaultString(byeMessage, "bye!");
   }
 
 }

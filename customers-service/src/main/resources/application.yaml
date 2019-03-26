@@ -17,3 +17,4 @@ management:
 
 service:
   hello-message: ${HELLO_MESSAGE}
+  bye-message: ${BYE_MESSAGE}

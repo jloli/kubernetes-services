@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: customers-service-ingress
+  labels:
+    run: customers-service
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+spec:
+  rules:
+    - host: myapp.mycluster.info
+      http:
+        paths:
+          - path: /*
+            backend:
+              serviceName: customers-service
+              servicePort: 8080

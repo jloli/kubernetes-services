@@ -3,9 +3,9 @@ kind: Service
 metadata:
   labels:
     run: customers-service
-  name: customers-service
+  name: customers-service-nodeport
 spec:
-  type: ClusterIP
+  type: NodePort
   ports:
     - port: 8080
       protocol: TCP
